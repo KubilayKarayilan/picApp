@@ -1,0 +1,28 @@
+#button {
+    width: 300px;
+    height: 50px;
+    margin-left: 20px;
+    }
+canvas {
+    float: left;
+    margin: 20px;
+    }
+
+body {
+    font-size: 1.1em;
+    font-weight: 300;
+    font-family: source-sans-pro;
+    line-height: 1.8;
+    color: #404040;
+    max-width: 35rem;
+    }
+
+a {
+    color: #4166B5;
+    text-decoration: none;
+    }
+
+.alice{
+    font-size: 1.4rem;
+    font-family: alice;
+    }

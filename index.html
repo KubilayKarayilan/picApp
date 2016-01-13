@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div style="left: 33%;position: absolute;font-size: 25px">
+    <input type="file" accept="image/*" onchange="loadFile(event)" style="font-size: 25px">
+    <a id="downB" href="#" class="button" type="button" download="my-file-name.jpeg" >Fotografi indir</a>
+
+</div><canvas id="leCanvas" width="450" height="350" style="position: absolute;left: 37%;top:10%;border: dashed 2px"></canvas>
+
+
+<script>
+    var level = 1;
+    drawStage(level);
+
+    var button = document.getElementById('downB');
+    button.addEventListener('click', function (e) {
+        var canvasImageUrl=document.getElementById('leCanvas').toDataURL("image/jpeg", 1.0);
+        console.log(canvasImageUrl)
+        button.href = canvasImageUrl;
+    });
+
+    var loadFile = function(event) {
+       // var output = document.getElementById('output');
+      //  output.src = URL.createObjectURL(event.target.files[0]);
+        drawStage(2,URL.createObjectURL(event.target.files[0]))
+    };
+
+    function drawStage(level,url)
+    {
+        var canvas = document.getElementById("leCanvas");
+        var context = canvas.getContext("2d");
+        context.globalCompositeOperation = "source-over";
+
+        var image = new Image();
+        image.src = url;
+        image.onload = function() {
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+            if (level < 2)
+                return;
+
+            var cityImage = new Image();
+            cityImage.src = "turkey.png";
+            cityImage.onload = function() {
+                context.globalCompositeOperation = "darken";
+                context.drawImage(cityImage, 0, 0, canvas.width, canvas.height);
+
+             /*   if (level < 3)
+                    return;
+
+                gradient = context.createLinearGradient(0, canvas.height, canvas.width, canvas.height);
+
+                gradient.addColorStop(0.000, 'rgba(255, 0, 0, 1.000)');
+                gradient.addColorStop(0.333, 'rgba(225, 255, 0, 1.000)');
+                gradient.addColorStop(0.666, 'rgba(0, 255, 17, 1.000)');
+                gradient.addColorStop(1.000, 'rgba(0, 55, 255, 1.000)');
+
+                context.fillStyle = gradient;
+                context.fillRect(0, 0, canvas.width, canvas.height);*/
+            };
+        };
+    }
+
+
+</script>
+</body>
+</html>
