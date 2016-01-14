@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<div style="left: 33%;position: absolute;font-size: 25px">
-    <input type="file" accept="image/*" onchange="loadFile(event)" style="font-size: 25px">
-    <a id="downB" href="#" class="button" type="button" download="my-file-name.jpeg" >Fotografi indir</a>
-
+<div id="buttonCntren" style="left: 37%;position: absolute;font-size: 25px;">
+    <input type="file" name="file" id="file" class="inputfile"  accept="image/*" onchange="loadFile(event)" >
+    <label for="file">Fotograf yükle</label>
+    <a id="downB" href="#" class="button" type="button" download="my-file-name.png" >Fotografi indir</a>
 </div><canvas id="leCanvas" width="450" height="350" style="position: absolute;left: 37%;top:10%;border: dashed 2px"></canvas>
 
 
@@ -46,7 +48,7 @@
             var cityImage = new Image();
             cityImage.src = "turkey.png";
             cityImage.onload = function() {
-                context.globalCompositeOperation = "darken";
+                context.globalCompositeOperation = "soft-light";
                 context.drawImage(cityImage, 0, 0, canvas.width, canvas.height);
 
              /*   if (level < 3)

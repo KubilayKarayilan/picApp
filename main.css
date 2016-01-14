@@ -1,28 +1,116 @@
-#button {
-    width: 300px;
-    height: 50px;
-    margin-left: 20px;
-    }
-canvas {
-    float: left;
-    margin: 20px;
+
+@media (min-width: 601px) {
+    body {
+
+        font-family: source-sans-pro;
+        color: #404040;
+
     }
 
-body {
-    font-size: 1.1em;
-    font-weight: 300;
-    font-family: source-sans-pro;
-    line-height: 1.8;
-    color: #404040;
-    max-width: 35rem;
+    #buttonCntr {
+        width: 40%;
+        height: 10%;
+        margin: auto;
+        text-align: center;
+    }
+    #downB{
+        width: 150px;
+        height: 35px;
+        background: #094eaf;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: xx-large;
+    }
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+
+    }
+    .inputfile +label {
+        width: 150px;
+        height: 35px;
+        background: #094eaf;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: xx-large;
     }
 
-a {
-    color: #4166B5;
-    text-decoration: none;
+    .inputfile:focus + label,
+    .inputfile + label:hover {
+        background-color: red;
+    }
+    .alice{
+        font-size: 1.4rem;
+        font-family: alice;
+    }
+}
+@media (max-width: 600px) {
+    .facet_sidebar {
+        display: none;
+    }
+    #leCanvas {
+        position: absolute;
+        border: dashed 5px;
+        left: 5% !important;
+        width:350px; height:350px;
+    }
+    #buttonCntren {
+        left: 20% !important;
+        bottom: 15% !important;
     }
 
-.alice{
-    font-size: 1.4rem;
-    font-family: alice;
+    #downB{
+
+        background: #094eaf;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: xx-large;
+        position: absolute;
+
+        display: inline-block;
     }
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+
+    }
+    .inputfile +label {
+
+        background: #094eaf;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: xx-large;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+
+    .inputfile:focus + label,
+    .inputfile + label:hover {
+        background-color: red;
+    }
+    .alice{
+        font-size: 1.4rem;
+        font-family: alice;
+    }
+
+}
